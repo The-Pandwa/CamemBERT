@@ -32,4 +32,4 @@ print(f"Similarité phrase 2: {similarity2.item()}")
 st.title('Titre')
 st.header('En tête')
 
-st.text_area()
+st.text_area("Tape le texte","")

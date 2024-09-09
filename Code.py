@@ -15,7 +15,8 @@ def encode_sentence(sentence):
 # Tes phrases
 phrase1 = "Le chat mange une souris."
 phrase2 = "Le chien dort dans le jardin."
-test_phrase = "Un animal dort."#st.text_area("Tape le texte","")
+test_phrase = "Un animal dort."
+#st.text_area("Tape le texte","")
 
 # Encoder les phrases
 enc1 = encode_sentence(phrase1)

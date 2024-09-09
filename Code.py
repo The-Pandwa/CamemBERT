@@ -31,4 +31,4 @@ print(f"Similarité phrase 2: {similarity2.item()}")
 st.title('Titre')
 st.header('En tête')
 
-st.text_input
+st.text_area()

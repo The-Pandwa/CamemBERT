@@ -15,7 +15,7 @@ def encode_sentence(sentence):
 # Tes phrases
 phrase1 = "Le chat mange une souris."
 phrase2 = "Le chien dort dans le jardin."
-test_phrase = "Un animal dort."
+test_phrase = st.text_area("Tape le texte","")
 
 # Encoder les phrases
 enc1 = encode_sentence(phrase1)
@@ -31,5 +31,3 @@ print(f"Similarité phrase 2: {similarity2.item()}")
 
 st.title('Titre')
 st.header('En tête')
-
-st.text_area("Tape le texte","")

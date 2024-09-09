@@ -88,42 +88,42 @@ similarity19 = torch.nn.functional.cosine_similarity(enc_test, enc19)
 
 # Résultat de la comparaison
 if similarity1 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 1 ('{phrase1}'): {similarity1.item():.4f}")
+    st.write(f"Similarité avec phrase 1 ('{eca}'): {similarity1.item():.4f}")
 elif similarity2 > similarity1 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 2 ('{phrase2}'): {similarity2.item():.4f}")
+    st.write(f"Similarité avec phrase 2 ('{eni}'): {similarity2.item():.4f}")
 elif similarity3 > similarity2 or similarity1 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 3 ('{phrase3}'): {similarity3.item():.4f}")
+    st.write(f"Similarité avec phrase 3 ('{iop}'): {similarity3.item():.4f}")
 elif similarity4 > similarity2 or similarity3 or similarity1 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 4 ('{phrase4}'): {similarity4.item():.4f}")
+    st.write(f"Similarité avec phrase 4 ('{cra}'): {similarity4.item():.4f}")
 elif similarity5 > similarity2 or similarity3 or similarity4 or similarity1 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 5 ('{phrase5}'): {similarity5.item():.4f}")
+    st.write(f"Similarité avec phrase 5 ('{feca}'): {similarity5.item():.4f}")
 elif similarity6 > similarity2 or similarity3 or similarity4 or similarity5 or similarity1 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 6 ('{phrase6}'): {similarity6.item():.4f}")
+    st.write(f"Similarité avec phrase 6 ('{sacri}'): {similarity6.item():.4f}")
 elif similarity7 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity1 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 7 ('{phrase7}'): {similarity7.item():.4f}")
+    st.write(f"Similarité avec phrase 7 ('{sadi}'): {similarity7.item():.4f}")
 elif similarity8 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity1 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 8 ('{phrase8}'): {similarity8.item():.4f}")
+    st.write(f"Similarité avec phrase 8 ('{osa}'): {similarity8.item():.4f}")
 elif similarity9 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity1 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 9 ('{phrase9}'): {similarity9.item():.4f}")
+    st.write(f"Similarité avec phrase 9 ('{enu}'): {similarity9.item():.4f}")
 elif similarity10 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity1 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 10 ('{phrase10}'): {similarity10.item():.4f}")
+    st.write(f"Similarité avec phrase 10 ('{sram}'): {similarity10.item():.4f}")
 elif similarity11 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity1 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 11 ('{phrase11}'): {similarity11.item():.4f}")
+    st.write(f"Similarité avec phrase 11 ('{xel}'): {similarity11.item():.4f}")
 elif similarity12 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity1 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 12 ('{phrase12}'): {similarity12.item():.4f}")
+    st.write(f"Similarité avec phrase 12 ('{panda}'): {similarity12.item():.4f}")
 elif similarity13 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity1 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 13 ('{phrase13}'): {similarity13.item():.4f}")
+    st.write(f"Similarité avec phrase 13 ('{roub}'): {similarity13.item():.4f}")
 elif similarity14 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity1 or similarity15 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 14 ('{phrase14}'): {similarity14.item():.4f}")
+    st.write(f"Similarité avec phrase 14 ('{zozo}'): {similarity14.item():.4f}")
 elif similarity15 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity1 or similarity16 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 15 ('{phrase15}'): {similarity15.item():.4f}")
+    st.write(f"Similarité avec phrase 15 ('{steam}'): {similarity15.item():.4f}")
 elif similarity16 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity1 or similarity17 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 16 ('{phrase16}'): {similarity16.item():.4f}")
+    st.write(f"Similarité avec phrase 16 ('{elio}'): {similarity16.item():.4f}")
 elif similarity17 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity1 or similarity18 or similarity19 :
-    st.write(f"Similarité avec phrase 17 ('{phrase17}'): {similarity17.item():.4f}")
+    st.write(f"Similarité avec phrase 17 ('{hupper}'): {similarity17.item():.4f}")
 elif similarity18 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity1 or similarity19 :
-    st.write(f"Similarité avec phrase 18 ('{phrase18}'): {similarity18.item():.4f}")
+    st.write(f"Similarité avec phrase 18 ('{ougi}'): {similarity18.item():.4f}")
 elif similarity19 > similarity2 or similarity3 or similarity4 or similarity5 or similarity6 or similarity7 or similarity8 or similarity9 or similarity10 or similarity11 or similarity12 or similarity13 or similarity14 or similarity15 or similarity16 or similarity17 or similarity18 or similarity1 :
-    st.write(f"Similarité avec phrase 19 ('{phrase19}'): {similarity19.item():.4f}")
+    st.write(f"Similarité avec phrase 19 ('{forge}'): {similarity19.item():.4f}")
 else :
     st.write("Veuillez préciser votre saisie.")

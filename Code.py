@@ -26,10 +26,11 @@ enc_test = encode_sentence(test_phrase)
 similarity1 = torch.nn.functional.cosine_similarity(enc_test, enc1)
 similarity2 = torch.nn.functional.cosine_similarity(enc_test, enc2)
 
+
+st.title('Comparateur et similitude entre idées')
+
+st.header('Début des tests !')
+
+
 st.write(f"Similarité avec phrase 1 ('{phrase1}'): {similarity1.item():.4f}")
 st.write(f"Similarité avec phrase 2 ('{phrase2}'): {similarity2.item():.4f}")
-
-
-
-st.title('Titre')
-st.header('En tête')

@@ -23,11 +23,12 @@ enc2 = encode_sentence(phrase2)
 enc_test = encode_sentence(test_phrase)
 
 # Calculer la similarité (cosine similarity)
-similarity1 = st.write(torch.nn.functional.cosine_similarity(enc_test, enc1))
-similarity2 = st.write(torch.nn.functional.cosine_similarity(enc_test, enc2))
+similarity1 = torch.nn.functional.cosine_similarity(enc_test, enc1)
+similarity2 = torch.nn.functional.cosine_similarity(enc_test, enc2)
 
 st.write(f"Similarité phrase 1: {similarity1.item()}")
 st.write(f"Similarité phrase 2: {similarity2.item()}")
+
 
 st.title('Titre')
 st.header('En tête')

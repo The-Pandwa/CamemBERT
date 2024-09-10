@@ -8,7 +8,7 @@ tokenizer = CamembertTokenizer.from_pretrained("camembert-base")
 
 # Fonction pour encoder une phrase
 def phrases_encoder(phrase):
-    inputs = tokenizer(phraqe, return_tensors="pt", padding=True, truncation=True)
+    inputs = tokenizer(phrase, return_tensors="pt", padding=True, truncation=True)
     outputs = model(**inputs)
     return outputs.last_hidden_state.mean(dim=1)
 

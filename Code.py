@@ -2,6 +2,7 @@ import streamlit as st
 from transformers import CamembertModel, CamembertTokenizer
 import torch
 import torch.nn.functional as F
+import numpy as np
 
 # Charger le modèle et le tokenizer CamemBERT
 model = CamembertModel.from_pretrained("camembert-base")
@@ -66,3 +67,11 @@ max_similarity = similarities_dict[max_phrase]
 # Afficher la phrase correspondante avec la similarité maximale
 st.write(f"Similarité avec phrase '{max_phrase}': {max_similarity:.4f}")
 
+# Afficher les vecteurs encodés
+def print_vector_comparison(phrase, enc_phrase):
+    st.write(f"Phrase: {phrase}")
+    st.write(f"Encodage: {enc_phrase.detach().numpy()}")
+
+# Afficher les encodages de la phrase de test et celle avec la plus grande similarité
+print_vector_comparison("Phrase de test", encoded_test)
+print_vector_comparison(dict_perso[max_phrase], phrases_encoder(dict_perso[max_phrase]))

@@ -49,4 +49,12 @@ for clef, valeur in dict_perso.items():
     enc_clef = "enc_" + clef
     similarities_dict[enc_clef] = encoded_value  
 
+#Test dictionnaire
 st.write(similarities_dict)
+
+# Trouver la phrase avec la similarité maximale
+max_phrase = max(similarities_dict, key=similarities_dict.get)
+max_similarity = similarities_dict[max_phrase]
+
+# Afficher la phrase correspondante avec la similarité maximale
+st.write(f"Similarité avec phrase '{max_phrase}': {max_similarity.item():.4f}")

@@ -66,4 +66,5 @@ max_phrase = max(similarities_dict, key=similarities_dict.get)
 max_similarity = similarities_dict[max_phrase]
 
 # Afficher la phrase correspondante avec la similarité maximale
-st.write(f"Similarité avec phrase '{max_phrase}': {max_similarity.item():.4f}")
+st.write(f"Similarité avec phrase '{max_phrase}': {max_similarity:.4f}")
+

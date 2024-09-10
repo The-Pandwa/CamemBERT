@@ -45,9 +45,6 @@ st.header('Début des tests !')
 # Zone d'expression libre
 test_phrase = st.text_area("Tape le texte","")
 
-# Ajout zone expression libre au dictionnaire
-dict_perso['test'] = test_phrase
-
 # Initialisation du dictionnaire des similarités
 similarities_dict = {}
 

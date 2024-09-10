@@ -7,8 +7,8 @@ model = CamembertModel.from_pretrained("camembert-base")
 tokenizer = CamembertTokenizer.from_pretrained("camembert-base")
 
 # Fonction pour encoder une phrase
-def encode_sentence(sentence):
-    inputs = tokenizer(sentence, return_tensors="pt", padding=True, truncation=True)
+def phrases_encoder(phrase):
+    inputs = tokenizer(phraqe, return_tensors="pt", padding=True, truncation=True)
     outputs = model(**inputs)
     return outputs.last_hidden_state.mean(dim=1)
 
@@ -45,7 +45,8 @@ similarities_dict = {}
 
 # Boucle pour encoder les phrases et les ajouter dans similarities_dict
 for clef, valeur in dict_perso.items():
-    encoded_value = encode_sentence(valeur)  
-    similarities_dict[clef] = encoded_value  
+    encoded_value = phrases_encoder(valeur)  
+    enc_clef = "enc_" + clef
+    similarities_dict[enc_clef] = encoded_value  
 
 st.write(similarities_dict)

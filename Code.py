@@ -5,8 +5,8 @@ import torch.nn.functional as F
 import numpy as np
 
 # Charger le modèle et le tokenizer CamemBERT
-model = CamembertModel.from_pretrained("camembert-base-finetuned-sentiment")
-tokenizer = CamembertTokenizer.from_pretrained("camembert-base-finetuned-sentiment")
+model = CamembertModel.from_pretrained("camembert-base-ccnet-4gb")
+tokenizer = CamembertTokenizer.from_pretrained("camembert-base-ccnet-4gb")
 
 # Fonction pour encoder une phrase
 def phrases_encoder(phrase):

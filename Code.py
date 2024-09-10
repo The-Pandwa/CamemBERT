@@ -7,6 +7,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 nltk.download('stopwords')
 nltk.download('punkt')
+nltk.download('punkt_tab')
 
 # Charger le modèle et le tokenizer CamemBERT
 model = CamembertModel.from_pretrained("camembert/camembert-base-ccnet-4gb")

@@ -35,10 +35,18 @@ dict_perso = {
     'forge' : "Les Forgelances sont des lanciers qui ne croient qu'en eux-mêmes ! Tirant leurs pouvoirs de la Lance Originelle, ces combattants cherchent à se forger une renommée que la mort elle-même ne saurait effacer. Féru d'arts, de récits légendaires et de joutes épiques, le Forgelance se laissera convaincre de brandir son arme à vos côtés par des promesses de gloire et de postérité. Véritables fers de lance des combats, ils sont les premiers au contact pour percer les défenses adverses."
 }
 
-# Boucle de test
-for perso, resume in dict_perso.items() :
-    st.write(perso)
-    st.write(resume)
+
+# Titre du streamlit
+st.title('Comparateur et similitude entre idées')
+
+# Explication du fonctionnement
+st.header('Début des tests !')
+
+# Zone d'expression libre
+test_phrase = st.text_area("Tape le texte","")
+
+# Ajout zone expression libre au dictionnaire
+dict_perso['test'] = test_phrase
 
 # Initialisation du dictionnaire des similarités
 similarities_dict = {}
@@ -48,9 +56,6 @@ for clef, valeur in dict_perso.items():
     encoded_value = phrases_encoder(valeur)  
     enc_clef = "enc_" + clef
     similarities_dict[enc_clef] = encoded_value  
-
-#Test dictionnaire
-st.write(similarities_dict)
 
 # Trouver la phrase avec la similarité maximale
 max_phrase = max(similarities_dict, key=similarities_dict.get)

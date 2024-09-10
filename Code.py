@@ -35,7 +35,6 @@ dict_perso = {
     'forge' : "Les Forgelances sont des lanciers qui ne croient qu'en eux-mêmes ! Tirant leurs pouvoirs de la Lance Originelle, ces combattants cherchent à se forger une renommée que la mort elle-même ne saurait effacer. Féru d'arts, de récits légendaires et de joutes épiques, le Forgelance se laissera convaincre de brandir son arme à vos côtés par des promesses de gloire et de postérité. Véritables fers de lance des combats, ils sont les premiers au contact pour percer les défenses adverses."
 }
 
-
 # Titre du streamlit
 st.title('Comparateur et similitude entre idées')
 
@@ -51,11 +50,15 @@ dict_perso['test'] = test_phrase
 # Initialisation du dictionnaire des similarités
 similarities_dict = {}
 
+# Encoder la phrase de test
+encoded_test = phrases_encoder(test_phrase)
+
 # Boucle pour encoder les phrases et les ajouter dans similarities_dict
 for clef, valeur in dict_perso.items():
     encoded_value = phrases_encoder(valeur)  
     enc_clef = "enc_" + clef
-    similarities_dict[enc_clef] = encoded_value  
+    similarity = F.cosine_similarity(encoded_test, encoded_value).item() 
+    similarities_dict[enc_clef] = similarity
 
 # Trouver la phrase avec la similarité maximale
 max_phrase = max(similarities_dict, key=similarities_dict.get)

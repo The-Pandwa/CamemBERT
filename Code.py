@@ -1,6 +1,7 @@
 import streamlit as st
 from transformers import CamembertModel, CamembertTokenizer
 import torch
+import torch.nn.functional as F
 
 # Charger le modèle et le tokenizer CamemBERT
 model = CamembertModel.from_pretrained("camembert-base")

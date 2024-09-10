@@ -36,6 +36,6 @@ dict_perso = {
 }
 
 for perso, resume in dict_perso.items() :
-    print(perso)
-    print(resume)
+    st.write(perso)
+    st.write(resume)
 

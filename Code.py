@@ -35,7 +35,17 @@ dict_perso = {
     'forge' : "Les Forgelances sont des lanciers qui ne croient qu'en eux-mêmes ! Tirant leurs pouvoirs de la Lance Originelle, ces combattants cherchent à se forger une renommée que la mort elle-même ne saurait effacer. Féru d'arts, de récits légendaires et de joutes épiques, le Forgelance se laissera convaincre de brandir son arme à vos côtés par des promesses de gloire et de postérité. Véritables fers de lance des combats, ils sont les premiers au contact pour percer les défenses adverses."
 }
 
+# Boucle de test
 for perso, resume in dict_perso.items() :
     st.write(perso)
     st.write(resume)
 
+# Initialisation du dictionnaire des similarités
+similarities_dict = {}
+
+# Boucle pour encoder les phrases et les ajouter dans similarities_dict
+for clef, valeur in dict_perso.items():
+    encoded_value = encode_sentence(valeur)  
+    similarities_dict[clef] = encoded_value  
+
+st.write(similarities_dict)

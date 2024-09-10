@@ -2,11 +2,10 @@ import streamlit as st
 from transformers import CamembertModel, CamembertTokenizer
 import torch
 import torch.nn.functional as F
-import numpy as np
 
 # Charger le modèle et le tokenizer CamemBERT
-model = CamembertModel.from_pretrained("camembert-base-ccnet-4gb")
-tokenizer = CamembertTokenizer.from_pretrained("camembert-base-ccnet-4gb")
+model = CamembertModel.from_pretrained("camembert/camembert-base-ccnet-4gb")
+tokenizer = CamembertTokenizer.from_pretrained("camembert/camembert-base-ccnet-4gb")
 
 # Fonction pour encoder une phrase
 def phrases_encoder(phrase):

@@ -82,3 +82,5 @@ max_similarity = similarities_dict[max_phrase]
 
 # Afficher la phrase correspondante avec la similarité maximale
 st.write(f"Similarité avec phrase '{max_phrase}': {max_similarity:.4f}")
+st.write(f"Similarité avec phrase '{similarities_dict.keys[1]}': {similarities_dict[1]:.4f}")
+st.write(f"Similarité avec phrase '{similarities_dict.keys[2]}': {similarities_dict[2]:.4f}")

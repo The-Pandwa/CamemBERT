@@ -18,6 +18,13 @@ def phrases_encoder(phrase):
     outputs = model(**inputs)
     return outputs.last_hidden_state.mean(dim=1)
 
+# Fonction pour supprimer les stop words
+def suppr_stopwords(text):
+    stop_words = set(stopwords.words('french'))
+    words = word_tokenize(text, language='french')
+    filtered_words = [word for word in words if word.lower() not in stop_words]
+    return ' '.join(filtered_words)
+
 # Dictionnaire des persos
 dict_perso = {
     'eca' : "Les Ecaflips sont des guerriers joueurs qui se fourrent dans les endroits où l'on peut gagner gros, et perdre beaucoup… Un Ecaflip bien dans sa peau parie sans arrêt, pour tout et pour rien. Mais attention, il prend le jeu très au sérieux et ira même jusqu'à risquer sa vie sur un jet de dés pour tenter de remporter la mise…",
@@ -50,14 +57,18 @@ st.header('Début des tests !')
 # Zone d'expression libre
 test_phrase = st.text_area("Tape le texte","")
 
+# Supprimer les stop words de la phrase de test
+cleaned_test_phrase = suppr_stopwords(test_phrase)
+
 # Initialisation du dictionnaire des similarités
 similarities_dict = {}
 
 # Encoder la phrase de test
-encoded_test = phrases_encoder(test_phrase)
+encoded_test = phrases_encoder(cleaned_test_phrase)
 
 # Boucle pour encoder les phrases et les ajouter dans similarities_dict
 for clef, valeur in dict_perso.items():
+    cleaned_value = suppr_stopwords(valeur)
     encoded_value = phrases_encoder(valeur)  
     enc_clef = "enc_" + clef
     similarity = F.cosine_similarity(encoded_test, encoded_value).item() 

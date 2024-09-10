@@ -2,6 +2,11 @@ import streamlit as st
 from transformers import CamembertModel, CamembertTokenizer
 import torch
 import torch.nn.functional as F
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+nltk.download('stopwords')
+nltk.download('punkt')
 
 # Charger le modèle et le tokenizer CamemBERT
 model = CamembertModel.from_pretrained("camembert/camembert-base-ccnet-4gb")
@@ -44,6 +49,19 @@ st.header('Début des tests !')
 
 # Zone d'expression libre
 test_phrase = st.text_area("Tape le texte","")
+
+# Traitement des stops words
+stop_words = set(stopwords.words('french'))
+
+# Tokeniser la phrase
+words = word_tokenize(test_phrase, language='french')
+
+# Filtrer les mots vides
+filtered_words = [word for word in words if word.lower() not in stop_words]
+
+# Afficher le résultat
+st.write("Phrase originale :", test_phrase)
+st.write("Phrase après suppression des stop words :", ' '.join(filtered_words))
 
 # Initialisation du dictionnaire des similarités
 similarities_dict = {}

@@ -30,8 +30,8 @@ def suppr_stopwords(text):
 dict_perso = {
     'eca' : "Les Ecaflips sont des guerriers joueurs qui se fourrent dans les endroits où l'on peut gagner gros, et perdre beaucoup… Un Ecaflip bien dans sa peau parie sans arrêt, pour tout et pour rien. Mais attention, il prend le jeu très au sérieux et ira même jusqu'à risquer sa vie sur un jet de dés pour tenter de remporter la mise…",
     'eni' : "Les Eniripsas sont des guérisseurs qui soignent d'un simple Mot. Ils utilisent le pouvoir de la parole pour soulager les souffrances de leurs alliés, mais parfois aussi pour blesser leurs ennemis. Certains Eniripsas sont même devenus de véritables arpenteurs du verbe, des rôdeurs des langues oubliées.",
-    'iop' : "Les Iops sont des guerriers fonceurs et sans reproche ! Une chose est sûre : les Iops savent faire parler les armes. D'ailleurs, se retrouver pris dans une bagarre au moins une fois par jour est pour eux un signe de bonne santé. Leur tempérament impétueux fait des Iops des paladins de l'extrême, capables du meilleur... comme du pire !",
-    'cra' : "Les Crâs sont des archers aussi fiers que précis ! Ils font des alliés précieux contre les adeptes de la mêlée franche. Restant à distance, décochant leurs traits empennés dans le moindre orifice laissé sans surveillance, ils ne laissent aucun répit à leurs adversaires !",
+    'iop' : "Les Iops sont des guerriers fonceurs et sans reproche ! Une chose est sûre : les Iops savent faire parler les armes. D'ailleurs, se retrouver pris dans une bagarre au moins une fois par jour est pour eux un signe de bonne santé. Leur tempérament impétueux fait des Iops des paladins de l'extrême, capables du meilleur... comme du pire ! Iop est le Dieu de la bravoure et du courage, il est l'un des Douze Dieux Majeurs.Il accorde sa force à tous ceux qui ont la baston dans le sang ! Il méprise tellement les lâches que ses disciples, les Iops sont tous de véritables brutes qui foncent têtes baissées dans les combats… même ceux perdus d’avance ! Iop est le plus puissant des Dieux, et est donc le plus impulsif de ses congénères.",
+    'cra' : "Les Crâs sont des archers aussi fiers que précis ! Ils font des alliés précieux contre les adeptes de la mêlée franche. Restant à distance, décochant leurs traits empennés dans le moindre orifice laissé sans surveillance, ils ne laissent aucun répit à leurs adversaires ! Les Crâs sont des habitants du Monde des Douze vénérant la déesse Crâ. C'est une espèce spécialisée dans le combat à l'arc. Les Crâs sont des archers aussi fiers que précis ! Ils font des alliés précieux contre les adeptes de la mêlée franche. Restant à distance, décochant leurs traits empennés dans le moindre orifice laissé sans surveillance, ils ne laissent aucun répit à leurs adversaires !",
     'feca' : "Les Fécas sont de loyaux protecteurs toujours sur la défensive. Ils sont appréciés dans les groupes d'aventuriers pour leurs armures élémentaires et leur capacité à encaisser les coups durs. Ils sont également maîtres dans l’art des signes magiques : quand il va y avoir du grabuge, les Fécas sortent leurs glyphes !",
     'sacri' : "Les Sacrieurs sont des berserkers qui décuplent leurs forces dès qu'ils sont frappés ! N'ayant pas peur de recevoir des coups, ni de s'exposer aux blessures, ils seront souvent en première ligne, prêts à verser le premier sang ! Le Sacrieur est vraiment le compagnon idéal pour vos longues soirées guerrières…",
     'sadi' : "Les Sadidas sont des invocateurs qui empoisonnent la vie de leurs ennemis ! Apprivoiser les Ronces pour en faire des armes terrifiantes, confectionner des poupées de guerre et de soins, voilà qui satisfait tout disciple Sadida digne de ce nom.",
@@ -82,6 +82,10 @@ max_similarity = similarities_dict[max_phrase]
 
 # Afficher la phrase correspondante avec la similarité maximale
 st.write(f"Similarité avec phrase '{max_phrase}': {max_similarity:.4f}")
-top_3 = dict(sorted(similarities_dict.items(), key=lambda item: item[1], reverse=True)[:3])
+top_3 = dict(sorted(similarities_dict.items(), key=lambda item: item[1], reverse=True)[2:3])
+top_2 = dict(sorted(similarities_dict.items(), key=lambda item: item[1], reverse=True)[1:2])
+top_1 = dict(sorted(similarities_dict.items(), key=lambda item: item[1], reverse=True)[0:1])
 
 st.write(top_3)
+st.write(top_2)
+st.write(top_1)

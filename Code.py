@@ -105,11 +105,11 @@ with col3 :
 role_1 = st.toggle(st.header('Rôle du personnage en combat :'))
 if role_1 :
     st.selectbox("Rôle principal :",
-                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation")
+                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                 )
     st.selectbox("Rôle secondaire :",
-                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation")
+                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                 )
     st.selectbox("Rôle tertiaire :",
-                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation")
+                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                 )

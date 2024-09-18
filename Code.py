@@ -50,7 +50,7 @@ dict_perso = {
 }
 
 # Import fichier CSV
-list_perso = pd.read_csv(r'Perso.csv')
+list_perso = pd.read_csv('https://github.com/The-Pandwa/CamemBERT/blob/main/Perso.csv')
 st.write(list_perso)
 
 # Titre du streamlit

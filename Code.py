@@ -1,3 +1,4 @@
+import pandas as pd
 import streamlit as st
 from transformers import CamembertModel, CamembertTokenizer
 import torch
@@ -50,6 +51,7 @@ dict_perso = {
 }
 
 # Import fichier CSV
+
 list_perso = pd.read_csv("https://github.com/The-Pandwa/CamemBERT/blob/main/Perso.csv")
 st.write(list_perso)
 

@@ -104,12 +104,16 @@ with col3 :
 # Bouton Rôle
 role_1 = st.toggle(st.header('Rôle du personnage en combat :'))
 if role_1 :
-    st.selectbox("Rôle principal :",
-                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
-                )
-    st.selectbox("Rôle secondaire :",
-                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
-                )
-    st.selectbox("Rôle tertiaire :",
-                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
-                )
+    col1, col2, col3 = st.columns(3)
+    with col1 :
+        st.selectbox("Rôle principal :",
+                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                    )
+    with col2 :
+        st.selectbox("Rôle secondaire :",
+                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                    )
+    with col3 :
+        st.selectbox("Rôle tertiaire :",
+                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                    )

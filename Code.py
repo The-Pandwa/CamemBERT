@@ -52,7 +52,7 @@ dict_perso = {
 
 # Import fichier CSV + DF
 link = "https://github.com/The-Pandwa/CamemBERT/blob/fb0ae761a37f8bbd7f077b71672fded505432611/Perso.csv"
-list_perso = pd.read_csv(link)
+list_perso = pd.read_csv(link, sep =';')
 st.dataframe(list_perso)
 
 # Titre du streamlit

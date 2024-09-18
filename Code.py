@@ -52,7 +52,8 @@ dict_perso = {
 
 # Import fichier CSV
 
-list_perso = pd.read_csv("https://github.com/The-Pandwa/CamemBERT/main/Perso.csv")
+link = "https://github.com/The-Pandwa/CamemBERT/main/Perso.csv"
+list_perso = pd.read_csv(link)
 st.write(list_perso)
 
 # Titre du streamlit

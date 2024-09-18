@@ -50,11 +50,6 @@ dict_perso = {
     'forge' : "Les Forgelances sont des lanciers qui ne croient qu'en eux-mêmes ! Tirant leurs pouvoirs de la Lance Originelle, ces combattants cherchent à se forger une renommée que la mort elle-même ne saurait effacer. Féru d'arts, de récits légendaires et de joutes épiques, le Forgelance se laissera convaincre de brandir son arme à vos côtés par des promesses de gloire et de postérité. Véritables fers de lance des combats, ils sont les premiers au contact pour percer les défenses adverses."
 }
 
-# Import fichier CSV + DF
-link = "https://github.com/The-Pandwa/CamemBERT/blob/fb0ae761a37f8bbd7f077b71672fded505432611/Perso.csv"
-list_perso = pd.read_csv(link, sep = ";")
-st.dataframe(list_perso)
-
 # Titre du streamlit
 st.title('Comparateur et similitude entre idées')
 
@@ -105,3 +100,16 @@ with col2 :
 with col3 :
     st.header('2nd')
     st.write(top_2)
+
+# Bouton Rôle
+role_1 = st.toggle(st.header('Rôle du personnage en combat :'))
+if role_1 :
+    st.selectbox("Rôle principal :",
+                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation")
+                )
+    st.selectbox("Rôle secondaire :",
+                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation")
+                )
+    st.selectbox("Rôle tertiaire :",
+                 ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation")
+                )

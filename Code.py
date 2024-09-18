@@ -102,7 +102,7 @@ with col3 :
     st.write(top_2)
 
 # Bouton Rôle
-role_1 = st.toggle(st.header('Rôle du personnage en combat :'))
+role_1 = st.toggle('Rôle du personnage en combat :')
 if role_1 :
     col1, col2, col3 = st.columns(3)
     with col1 :

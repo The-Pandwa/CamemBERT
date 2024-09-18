@@ -54,7 +54,6 @@ dict_perso = {
 
 link = "https://github.com/The-Pandwa/CamemBERT/main/Perso.csv"
 list_perso = pd.read_csv(link)
-st.write(list_perso)
 
 # Titre du streamlit
 st.title('Comparateur et similitude entre idées')

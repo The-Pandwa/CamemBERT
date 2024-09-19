@@ -24,7 +24,7 @@ st.dataframe(df)
 
 # Zone d'expression libre
 test_phrase = st.text_area("Tape le texte","")
-if test_phrase == None :
+if test_phrase == "" :
     st.write("Wait")
 else :
     st.write("OK")

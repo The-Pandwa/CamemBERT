@@ -24,7 +24,7 @@ def suppr_stopwords(text):
     return ' '.join(filtered_words)
 
 # Lecture du dataframe
-
+# Test
 
 # Titre du streamlit
 st.title('Comparateur et similitude entre idées')

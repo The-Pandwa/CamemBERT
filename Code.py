@@ -40,7 +40,7 @@ if roles_perso :
                     )
 
 # Zone d'expression libre
-test_phrase = st.text_area("Tape le texte","")
+test_phrase = st.text_area("","Tape le texte")
 if test_phrase == "" :
     st.write("Wait")
 else :

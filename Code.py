@@ -19,7 +19,7 @@ st.title('Comparateur et similitude entre idées')
 st.header('Début des tests !')
 
 # Dataframe
-df = pd.read_csv("The-Pandwa/CamemBERT/Perso.csv")
+df = pd.read_csv(r"The-Pandwa/CamemBERT/Perso.csv")
 st.dataframe(df)
 
 # Zone d'expression libre

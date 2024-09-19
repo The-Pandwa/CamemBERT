@@ -19,14 +19,13 @@ st.title('Comparateur et similitude entre idées')
 st.header('Début des tests !')
 
 # Dataframe
-df = pd.read_csv(r"The-Pandwa/CamemBERT/Perso.csv")
+df = pd.read_csv("Perso.csv")
 st.dataframe(df)
 
 # Zone d'expression libre
 test_phrase = st.text_area("Tape le texte","")
 
 # Initialisation du dictionnaire des similarités
-similarities_dict = {}
 
 # Encoder la phrase de test
 

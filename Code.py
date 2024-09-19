@@ -16,18 +16,13 @@ def phrases_encoder(phrase):
     outputs = model(**inputs)
     return outputs.last_hidden_state.mean(dim=1)
 
-# Fonction pour supprimer les stop words
-def suppr_stopwords(text):
-    stop_words = set(stopwords.words('french'))
-    words = word_tokenize(text, language='french')
-    filtered_words = [word for word in words if word.lower() not in stop_words]
-    return ' '.join(filtered_words)
-
 # Lecture du dataframe
 # Test
 dict_perso = {
     "ougi" : "Quand on est un barbare avec un caractère de chienchien, il faut savoir montrer les crocs pour se faire respecter. Le regard fier, le poil brillant, la truffe humide : c'est ainsi que l'Ouginak traverse les épreuves et triomphe de l'adversité. Traquer ses proies sans relâche, laisser éclater sa rage pour écraser ses ennemis, les voir mourir devant soi et entendre les miaulements terrorisés de leurs chachas… Voilà une vie digne d'être vécue !",
-    "forge" : "Les Forgelances sont des lanciers qui ne croient qu'en eux-mêmes ! Tirant leurs pouvoirs de la Lance Originelle, ces combattants cherchent à se forger une renommée que la mort elle-même ne saurait effacer. Féru d'arts, de récits légendaires et de joutes épiques, le Forgelance se laissera convaincre de brandir son arme à vos côtés par des promesses de gloire et de postérité. Véritables fers de lance des combats, ils sont les premiers au contact pour percer les défenses adverses."
+    "forge" : "Les Forgelances sont des lanciers qui ne croient qu'en eux-mêmes ! Tirant leurs pouvoirs de la Lance Originelle, ces combattants cherchent à se forger une renommée que la mort elle-même ne saurait effacer. Féru d'arts, de récits légendaires et de joutes épiques, le Forgelance se laissera convaincre de brandir son arme à vos côtés par des promesses de gloire et de postérité. Véritables fers de lance des combats, ils sont les premiers au contact pour percer les défenses adverses.",
+    "farce" : "Les farces sont des lanciers qui ne croient qu'en eux-mêmes ! Tirant leurs pouvoirs de la Lance Originelle, ces combattants cherchent à se forger une renommée que la mort elle-même ne saurait effacer. Féru d'arts, de récits légendaires et de joutes épiques, le Forgelance se laissera convaincre de brandir son arme à vos côtés par des promesses de gloire et de postérité. Véritables fers de lance des combats, ils sont les premiers au contact pour percer les défenses adverses."
+
 }
 
 # Titre du streamlit
@@ -51,7 +46,6 @@ encoded_test = phrases_encoder(test_phrase)
 
 # Boucle pour encoder les phrases et les ajouter dans similarities_dict
 for clef, valeur in dict_perso.items():
-    #cleaned_value = suppr_stopwords(valeur)
     encoded_value = phrases_encoder(valeur)  
     enc_clef = "enc_" + clef
     similarity = F.cosine_similarity(encoded_test, encoded_value).item() 

@@ -41,6 +41,7 @@ test_phrase = st.text_area("Tape le texte","")
 
 # Supprimer les stop words de la phrase de test
 # cleaned_test_phrase = suppr_stopwords(test_phrase)
+# Test
 
 # Initialisation du dictionnaire des similarités
 similarities_dict = {}

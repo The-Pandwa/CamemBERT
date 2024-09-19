@@ -50,11 +50,6 @@ dict_perso = {
     'forge' : "Les Forgelances sont des lanciers qui ne croient qu'en eux-mêmes ! Tirant leurs pouvoirs de la Lance Originelle, ces combattants cherchent à se forger une renommée que la mort elle-même ne saurait effacer. Féru d'arts, de récits légendaires et de joutes épiques, le Forgelance se laissera convaincre de brandir son arme à vos côtés par des promesses de gloire et de postérité. Véritables fers de lance des combats, ils sont les premiers au contact pour percer les défenses adverses."
 }
 
-# Affichage dataframe
-link = "https://github.com/The-Pandwa/CamemBERT/blob/668dafabc55efb11f7265a64c2f5656b2d82c486/Perso.csv"
-df = pd.read_cvs(link)
-st.dataframe(df)
-
 # Titre du streamlit
 st.title('Comparateur et similitude entre idées')
 
@@ -65,13 +60,13 @@ st.header('Début des tests !')
 test_phrase = st.text_area("Tape le texte","")
 
 # Supprimer les stop words de la phrase de test
-cleaned_test_phrase = suppr_stopwords(test_phrase)
+# cleaned_test_phrase = suppr_stopwords(test_phrase)
 
 # Initialisation du dictionnaire des similarités
 similarities_dict = {}
 
 # Encoder la phrase de test
-encoded_test = phrases_encoder(cleaned_test_phrase)
+encoded_test = phrases_encoder(test_phrase)
 
 # Boucle pour encoder les phrases et les ajouter dans similarities_dict
 for clef, valeur in dict_perso.items():
@@ -112,13 +107,13 @@ if role_1 :
     col1, col2, col3 = st.columns(3)
     with col1 :
         st.selectbox("Rôle principal :",
-                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                     ("Non défini", "Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                     )
     with col2 :
         st.selectbox("Rôle secondaire :",
-                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                     ("Non défini", "Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                     )
     with col3 :
         st.selectbox("Rôle tertiaire :",
-                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                     ("Non défini", "Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                     )

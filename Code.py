@@ -23,20 +23,20 @@ df = pd.read_csv("Perso.csv")
 st.dataframe(df)
 
 # Bouton Rôle
-role_1 = st.toggle('Rôle du personnage en combat :')
-if role_1 :
+roles_perso = st.toggle('Rôle du personnage en combat :')
+if roles_perso :
     col1, col2, col3 = st.columns(3)
     with col1 :
         st.selectbox("Rôle principal :",
-                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                     ("Non défini", "Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                     )
     with col2 :
         st.selectbox("Rôle secondaire :",
-                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                     ("Non défini", "Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                     )
     with col3 :
         st.selectbox("Rôle tertiaire :",
-                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                     ("Non défini", "Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                     )
 
 # Zone d'expression libre
@@ -51,6 +51,8 @@ else :
 # Encoder la phrase de test
 
 # Boucle pour encoder les phrases
+for description_perso in df :
+    texte_perso = df["Description"]
 
 # Trouver la phrase avec la similarité maximale
 

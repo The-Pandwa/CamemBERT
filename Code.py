@@ -25,9 +25,9 @@ st.dataframe(df)
 # Zone d'expression libre
 test_phrase = st.text_area("Tape le texte","")
 if test_phrase == None :
-    return "Wait"
+    st.write("Wait")
 else :
-    return "Ok"
+    st.write("OK")
 
 # Initialisation du dictionnaire des similarités
 

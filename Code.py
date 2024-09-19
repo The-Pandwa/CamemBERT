@@ -52,7 +52,7 @@ dict_perso = {
 
 # Affichage dataframe
 link = "https://github.com/The-Pandwa/CamemBERT/blob/668dafabc55efb11f7265a64c2f5656b2d82c486/Perso.csv"
-df = pd.read-cvs(link)
+df = pd.read_cvs(link)
 st.dataframe(df)
 
 # Titre du streamlit

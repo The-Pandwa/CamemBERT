@@ -40,7 +40,7 @@ if roles_perso :
                     )
 
 # Zone d'expression libre
-test_phrase = st.text_area("","Tape le texte")
+test_phrase = st.text_area("Quel héros voulez vous être ?","Ecrivez la description de votre héros")
 if test_phrase == "" :
     st.write("Wait")
 else :
@@ -53,6 +53,7 @@ else :
 # Boucle pour encoder les phrases
 for description_perso in df :
     texte_perso = df["Description"]
+    st.write(texte_perso)
 
 # Trouver la phrase avec la similarité maximale
 

@@ -22,6 +22,23 @@ st.header('Début des tests !')
 df = pd.read_csv("Perso.csv")
 st.dataframe(df)
 
+# Bouton Rôle
+role_1 = st.toggle('Rôle du personnage en combat :')
+if role_1 :
+    col1, col2, col3 = st.columns(3)
+    with col1 :
+        st.selectbox("Rôle principal :",
+                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                    )
+    with col2 :
+        st.selectbox("Rôle secondaire :",
+                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                    )
+    with col3 :
+        st.selectbox("Rôle tertiaire :",
+                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
+                    )
+
 # Zone d'expression libre
 test_phrase = st.text_area("Tape le texte","")
 if test_phrase == "" :
@@ -55,20 +72,3 @@ with col2 :
 with col3 :
     st.header('2nd')
     st.write(top_2)
-
-# Bouton Rôle
-role_1 = st.toggle('Rôle du personnage en combat :')
-if role_1 :
-    col1, col2, col3 = st.columns(3)
-    with col1 :
-        st.selectbox("Rôle principal :",
-                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
-                    )
-    with col2 :
-        st.selectbox("Rôle secondaire :",
-                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
-                    )
-    with col3 :
-        st.selectbox("Rôle tertiaire :",
-                     ("Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
-                    )

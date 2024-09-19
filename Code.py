@@ -37,6 +37,9 @@ similarities_dict = {}
 # Afficher la phrase correspondante avec la similarité maximale
 
 # Afficher le top 3 des meilleures correspondances
+top_1 = "First"
+top_2 = "Lose"
+top_3 = "Fail"
 
 # Organiser les résultats en colonne
 col1, col2, col3 = st.columns(3)

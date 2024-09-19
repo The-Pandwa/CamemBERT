@@ -70,7 +70,7 @@ encoded_test = phrases_encoder(cleaned_test_phrase)
 
 # Boucle pour encoder les phrases et les ajouter dans similarities_dict
 for clef, valeur in dict_perso.items():
-    cleaned_value = suppr_stopwords(valeur)
+    #cleaned_value = suppr_stopwords(valeur)
     encoded_value = phrases_encoder(valeur)  
     enc_clef = "enc_" + clef
     similarity = F.cosine_similarity(encoded_test, encoded_value).item() 

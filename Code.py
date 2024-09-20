@@ -49,7 +49,7 @@ else :
 # Test DF
 
 test = 0
-for ligne in df :
+for ligne in df.iterrows() :
     if df['Description'] != "" :
         st.write(test)
         test += 1

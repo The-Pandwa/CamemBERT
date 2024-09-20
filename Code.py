@@ -27,15 +27,15 @@ roles_perso = st.toggle('Rôle du personnage en combat :')
 if roles_perso :
     col1, col2, col3 = st.columns(3)
     with col1 :
-        st.selectbox("Rôle principal :",
+        role_1 = st.selectbox("Rôle principal :",
                      ("Non défini", "Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                     )
     with col2 :
-        st.selectbox("Rôle secondaire :",
+        role_2 = st.selectbox("Rôle secondaire :",
                      ("Non défini", "Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                     )
     with col3 :
-        st.selectbox("Rôle tertiaire :",
+        role_3 = st.selectbox("Rôle tertiaire :",
                      ("Non défini", "Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                     )
 
@@ -45,22 +45,6 @@ if test_phrase == "" :
     st.write("Wait")
 else :
     st.write("OK")
-
-# Test DF
-
-test = 0
-for ligne in df.iterrows() :
-    if ligne['Description'] != "" :
-        st.write(test)
-        test += 1
-        
-        
-
-# Encoder la phrase de test
-
-# Trouver la phrase avec la similarité maximale
-
-# Afficher la phrase correspondante avec la similarité maximale
 
 # Afficher le top 3 des meilleures correspondances
 top_1 = "First"
@@ -78,3 +62,5 @@ with col2 :
 with col3 :
     st.header('2nd')
     st.write(top_2)
+
+# Fonction NLP camembert

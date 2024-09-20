@@ -46,6 +46,16 @@ if test_phrase == "" :
 else :
     st.write("OK")
 
+# Test DF
+
+test = 0
+for ligne in df :
+    if df['Description'] != "" :
+        st.write(test)
+        test += 1
+        
+        
+
 # Encoder la phrase de test
 
 # Trouver la phrase avec la similarité maximale

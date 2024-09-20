@@ -7,8 +7,8 @@ import nltk
 from nltk.tokenize import word_tokenize
 
 # Charger le modèle et le tokenizer CamemBERT
-model = CamembertModel.from_pretrained("camembert/camembert-base-ccnet-4gb")
-tokenizer = CamembertTokenizer.from_pretrained("camembert/camembert-base-ccnet-4gb")
+model = CamembertModel.from_pretrained("almanach/camembert-large")
+tokenizer = CamembertTokenizer.from_pretrained("almanach/camembert-large")
 
 # Fonction pour encoder une phrase
 

@@ -3,8 +3,6 @@ import streamlit as st
 from transformers import CamembertModel, CamembertTokenizer
 import torch
 import torch.nn.functional as F
-import nltk
-from nltk.tokenize import word_tokenize
 
 # Charger le modèle et le tokenizer CamemBERT
 model = CamembertModel.from_pretrained("almanach/camembert-large")

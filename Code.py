@@ -68,5 +68,5 @@ def analyse_description(descritpion):
         token = model(phrase)
     return token.numpy()
     
-df['test'] = df['Descripton'].apply(analyse_description)
+df['test'] = df['Description'].apply(analyse_description)
 st.dataframe(df)

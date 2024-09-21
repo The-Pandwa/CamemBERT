@@ -62,3 +62,11 @@ with col3 :
     st.write(top_2)
 
 # Fonction NLP camembert
+def analyse_description(descritpion):
+    phrase = tokenizer(description)
+    with torch.no_grad():
+        token = model(phrase)
+    return token.numpy()
+    
+df['test'] = df['Descripton'].apply(analyse_description)
+st.dataframe(df)

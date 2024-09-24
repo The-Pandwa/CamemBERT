@@ -10,12 +10,11 @@ model = CamembertModel.from_pretrained("almanach/camembert-large")
 tokenizer = CamembertTokenizer.from_pretrained("almanach/camembert-large")
 
 # Fonction pour encoder une phrase
-
-# Titre du streamlit
-st.title('Comparateur et similitude entre idées')
-
-# Explication du fonctionnement
-st.header('Début des tests !')
+def analyse_description(description):
+    phrase = tokenizer(description, return_tensors = 'pt', truncation = True, padding = True)
+    with torch.no_grad():
+        token = model(**phrase)
+    return token.last_hidden_state.cpu().numpy()
 
 # Dataframe
 df = pd.read_csv("Perso.csv")
@@ -45,29 +44,3 @@ if test_phrase == "" :
 else :
     st.write("OK")
 
-# Afficher le top 3 des meilleures correspondances
-top_1 = "First"
-top_2 = "Lose"
-top_3 = "Fail"
-
-# Organiser les résultats en colonne
-col1, col2, col3 = st.columns(3)
-with col1 :
-    st.header('3ème')
-    st.write(top_3)
-with col2 :
-    st.header('1er')
-    st.write(top_1)
-with col3 :
-    st.header('2nd')
-    st.write(top_2)
-
-# Fonction NLP camembert
-def analyse_description(description):
-    phrase = tokenizer(description, return_tensors = 'pt', truncation = True, padding = True)
-    with torch.no_grad():
-        token = model(**phrase)
-    return token.last_hidden_state.cpu().numpy()
-    
-df['test'] = df['Description'].apply(analyse_description)
-st.dataframe(df)

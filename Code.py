@@ -63,7 +63,7 @@ with col3 :
 
 # Fonction NLP camembert
 def analyse_description(description):
-    phrase = tokenizer(description)
+    phrase = tokenizer(description, return_tensors = 'pt', truncation = True, padding = True)
     with torch.no_grad():
         token = model(phrase)
     return token.numpy()

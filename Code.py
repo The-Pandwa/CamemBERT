@@ -3,7 +3,7 @@ import streamlit as st
 from transformers import CamembertModel, CamembertTokenizer
 import torch
 import torch.nn.functional as F
-import numpy
+import numpy as np
 
 # Charger le modèle et le tokenizer CamemBERT
 model = CamembertModel.from_pretrained("almanach/camembert-large")
@@ -17,7 +17,10 @@ def analyse_description(description):
     return token.last_hidden_state.cpu().numpy()
 
 # Fonction comparaison description et saisie
-
+def cosine_similarity(vec1, vec2):
+    vec1 = vec1 / np.linalg.norm(vec1)
+    vec2 = vec2 / np.linalg.norm(vec2)
+    return np.dot(vec1, vec2.T)
 
 # Dataframe
 df_personnage = pd.read_csv("Perso.csv")
@@ -47,3 +50,8 @@ if phrase_utilisateur == "" :
 else :
     analyse_user = analyse_description(phrase_utilisateur)
     df_personnage['Encodage'] = df_personnage['Description'].apply(analyse_description)
+    df_personnage['Similarity'] = df_personnage["Encodage"].apply(lambda x: cosine_similarity(analyse_user, x).item())
+    top_matches = df_personnage.sort_values(by='similarity', ascending=False).head(3)
+
+
+st.dataframe(df_personnage)

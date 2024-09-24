@@ -16,9 +16,12 @@ def analyse_description(description):
         token = model(**phrase)
     return token.last_hidden_state.cpu().numpy()
 
+# Fonction comparaison description et saisie
+
+
 # Dataframe
-df = pd.read_csv("Perso.csv")
-st.dataframe(df)
+df_personnage = pd.read_csv("Perso.csv")
+st.dataframe(df_personnage)
 
 # Bouton Rôle
 roles_perso = st.toggle('Rôle du personnage en combat :')
@@ -37,10 +40,10 @@ if roles_perso :
                      ("Non défini", "Dégâts", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"),
                     )
 
-# Zone d'expression libre
-test_phrase = st.text_area("Quel héros voulez vous être ?","")
-if test_phrase == "" :
-    st.write("Wait")
+# Saisie utilisateur et comparaison avec les descriptions
+phrase_utilisateur = st.text_area("Quel héros voulez vous être ?","")
+if phrase_utilisateur == "" :
+    st.warning("Saisissez une phrase ", icon = '⚠️')
 else :
-    st.write("OK")
-
+    analyse_user = analyse_description(phrase_utilisateur)
+    df_personnage['Encodage'] = df_personnage['Description'].apply(analyse_description)

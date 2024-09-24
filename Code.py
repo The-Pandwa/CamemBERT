@@ -62,7 +62,7 @@ with col3 :
     st.write(top_2)
 
 # Fonction NLP camembert
-def analyse_description(descritpion):
+def analyse_description(description):
     phrase = tokenizer(description)
     with torch.no_grad():
         token = model(phrase)

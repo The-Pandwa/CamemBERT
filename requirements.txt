@@ -4,3 +4,4 @@ transformers
 sentencepiece
 nltk
 pandas
+numpy

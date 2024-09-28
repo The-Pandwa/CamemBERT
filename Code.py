@@ -51,7 +51,7 @@ else :
     analyse_user = analyse_description(phrase_utilisateur)
     df_personnage['Encodage'] = df_personnage['Description'].apply(analyse_description)
     df_personnage['Similarity'] = df_personnage["Encodage"].apply(lambda x: cosine_similarity(analyse_user, x).item())
-    top_matches = df_personnage.sort_values(by='similarity', ascending=False).head(3)
+    top_matches = df_personnage.sort_values(by='Similarity', ascending=False).head(3)
 
 
 st.dataframe(df_personnage)
